@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Operações Aritméticas</h1>
+<!-- Verifica se possui mensagens enviadas pelo app
+
+definir with_categories=true caso queira ter acesso as categorias -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="flash-error px-3">
+    <!--  Percorrer a lista de mensagens  -->
+    {% for category, message in messages %}
+    <!--  Criar um card filho   -->
+    <div class="alert {{ category }} alert-dismissible fade show px-5" role="alert">
+        <strong>{{ message }}</strong>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="calculos">
+
+    <div class="card_operacao">
+        <h2>Adição</h2>
+        <form class="form-somar" action="{{ url_for('somar') }}" method="post">
+            <div class="accordion" id="accordion1">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            Como Calcular?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                        <div class="accordion-body">
+                            <h4>Adição</h4>
+                            <p>Para somar é preico de 2 ou mais números</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label>
+                <input placeholder="Digite um número" name="form-n1">
+            </label>
+
+            <p class="operador">+</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2">
+            </label>
+
+            <p class="resultado">
+                {% if soma is defined %}
+                {{ n1 }} + {{ n2 }} = {{ soma }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit">Somar</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2>Subtração</h2>
+        <form class="form-somar" action="{{ url_for('subtrair') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1">
+            </label>
+
+            <p class="operador">-</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2">
+            </label>
+
+            <p class="resultado">
+                {% if sub is defined %}
+                {{ n1 }} - {{ n2 }} = {{ sub }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit">Subtrair</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2>Multiplicação</h2>
+        <form class="form-somar" action="{{ url_for('multiplicar') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1">
+            </label>
+
+            <p class="operador">*</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2">
+            </label>
+
+            <p class="resultado">
+                {% if mul is defined %}
+                {{ n1 }} * {{ n2 }} = {{ mul }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit">Multiplicar</button>
+        </form>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2>Divisão</h2>
+        <form class="form-somar" action="{{ url_for('dividir') }}" method="post">
+            <label>
+                <input placeholder="Digite um número" name="form-n1" class="form-control">
+            </label>
+
+            <p class="operador">/</p>
+
+            <label>
+                <input placeholder="Digite um número" name="form-n2">
+            </label>
+
+            <p class="resultado">
+                {% if div is defined %}
+                {{ n1 }} / {{ n2 }} = {{ div }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Dividir</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

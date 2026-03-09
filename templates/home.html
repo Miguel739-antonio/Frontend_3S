@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="carrosel d-flex overflow-hidden">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active bg-dark" data-bs-interval="2000">
+            <img src="/static/img/carousel-1.jpg" class="d-block w-100 opacity-50" alt="...">
+        </div>
+        <div class="carousel-item bg-dark" data-bs-interval="2000">
+            <img src="/static/img/carousel-2.jpg" class="d-block w-100 opacity-50" alt="...">
+        </div>
+        <div class="carousel-item bg-dark" data-bs-interval="2000">
+            <img src="/static/img/carousel-3.jpg" class="d-block w-100 opacity-50" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+    <div class="w-100 h-100 position-absolute d-flex flex-column justify-content-evenly" >
+        <p class="title-senai text-white display-1 text-center">Capacitação na mecânica</p>
+        <p class="subtitle-senai text-white display-6 text-center">Confira os nossos cursos Profissionalizantes</p>
+    </div>
+
+
+</div>
+
+<div class="cursos">
+
+    <div class="curso-text col-8 d-flex flex-column justify-content-center text align-items-center">
+        <h1>Descrição</h1>
+        <p>Um curso de mecânica é um programa educacional que introduz o aluno ao universo da mecânica, um domínio da física que estuda as leis do movimento e as forças atuantes em corpos físicos.
+
+Em um curso de mecânica, você terá a oportunidade de desvendar o complexo funcionamento de diversas máquinas, de um simples motor de carro até o maquinário de uma indústria avançada.</p>
+    </div>
+
+    <div class="curso-img bg-dark col-4">
+        <img src="/static/img/carousel-4.jpg" class="w-100 h-100">
+    </div>
+</div>
+<div class="cursos-2">
+    <div class="curso-img bg-dark col-4">
+        <img src="/static/img/carousel-5.jpg" class="w-100 h-100">
+    </div>
+
+    <div class="curso-text-2 col-8 d-flex flex-column justify-content-center text align-items-center">
+        <h1>Mecanica</h1>
+        <p>Em um curso de mecânica, os estudantes aprendem uma variedade de habilidades e conceitos fundamentais para compreender e operar sistemas mecânicos. Abaixo estão alguns tópicos que geralmente são cobertos em um curso de mecânica:
+
+Teoria Mecânica: Esta é a espinha dorsal de qualquer curso de mecânica. Os estudantes aprendem as leis fundamentais da física que regem o movimento e as forças, incluindo conceitos como cinemática, dinâmica, estática e mecânica dos fluidos.
+
+Desenho Técnico: O desenho técnico é uma habilidade essencial para os mecânicos, pois permite que eles entendam e criem representações visuais de componentes mecânicos e sistemas.
+
+Manutenção de Máquinas: A manutenção adequada das máquinas é vital para qualquer operação mecânica. Os estudantes aprendem a realizar manutenções preventivas e corretivas, identificar falhas e executar reparos quando necessário.</p>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

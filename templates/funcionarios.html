@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h3>Funcionários</h3>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Novo funcionário
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-nome" action="{{ url_for('cadastrar_funcionarios') }}" method="post">
+            <label>
+                Nome:
+                <input placeholder="Digite seu nome" name="form-nome" class="form-control">
+                Data de nascimento:
+                <input placeholder="Digite sua data de nascimento" name="form-data-nasc" class="form-control">
+                CPF:
+                <input placeholder="Digite seu cpf" name="form-cpf" class="form-control">
+                E-Mail:
+                <input placeholder="Digite seu email" name="form-email" class="form-control">
+                Cargo:
+                <input placeholder="Digite seu cargo" name="form-cargo" class="form-control">
+                Salario:
+                <input placeholder="Digite seu salario" name="form-salario" class="form-control">
+            </label>
+
+            <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Data Nascimento</th>
+        <th scope="col">CPF</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Salario</th>
+        <th scope="col">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for funcio in funcio_exe %}
+        <tr>
+            <th scope="row">{{funcio.id}}</th>
+            <td>{{ funcio.nome }}</td>
+            <td>{{ funcio.data_nasc }}</td>
+            <td>{{ funcio.cpf }}</td>
+            <td>{{ funcio.email }}</td>
+            <td>{{ funcio.cargo }}</td>
+            <td>{{ funcio.salario }}</td>
+
+            <td><a href=""><i class="bi bi-pencil"></i></a> <a href=""><i class="bi bi-trash text-danger"></i></a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
