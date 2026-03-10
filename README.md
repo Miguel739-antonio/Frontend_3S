@@ -32,4 +32,5 @@
 
 ### Gerador
 
+<img width="1895" height="911" alt="image" src="https://github.com/user-attachments/assets/b7e5aa97-03d7-4a8f-a833-382f2803b59c" />
 
