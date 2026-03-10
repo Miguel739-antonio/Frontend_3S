@@ -13,7 +13,6 @@
 
 </form>
 <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Não tem conta?Registre-se</a><br><br>
-<a href="{{url_for('logout')}}">SAIR</a>
 
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -24,18 +23,17 @@
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Novo Usuario</h1>
             </div>
             <div class="modal-body">
-                <form class="form-nome" action="{{ url_for('cadastro_usuario') }}" method="post">
+                <form id="form-login" class="form-nome" action="{{ url_for('cadastro_usuario') }}" method="post">
                     <label>
-                        Nome:
-                        <input placeholder="Digite seu nome" name="form-nome" class="form-control">
                         E-Mail:
-                        <input placeholder="Digite seu email" name="form-email" class="form-control">
+                        <input id="input-email" placeholder="Digite seu email" name="form-email" class="form-control">
                         Senha:
-                        <input placeholder="Digite sua senha" name="form-senha" class="form-control">
+                        <input id="input-senha" placeholder="Digite sua senha" name="form-senha" class="form-control">
 
                     </label>
 
                     <button type="submit">Cadastrar</button>
+                    <button class="btn btn-danger my-2"onclick="limpaInputsLogin()">Cancelar</button>
                 </form>
             </div>
             <div class="modal-footer">

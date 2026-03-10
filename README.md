@@ -30,3 +30,6 @@
 
 <img width="1912" height="885" alt="image" src="https://github.com/user-attachments/assets/9376bea8-d61c-4008-b263-94c9569f3dd0" />
 
+### Gerador
+
+

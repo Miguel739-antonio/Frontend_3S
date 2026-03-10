@@ -79,7 +79,7 @@ def dividir():
 
     return render_template("operacoes.html")
 
-@app.route('/geometria', methods=['GET', 'POST'])
+@app.route('/geometria')
 def geometria():
     return render_template("geometria.html")
 
@@ -191,6 +191,10 @@ def cadastro_usuario():
             return redirect(url_for('cadastro_usuario'))
     return render_template('cadastro.html')
 
+
+@app.route('/animais')
+def animais():
+    return render_template('animais.html')
 
 #TODO Final do código
 
